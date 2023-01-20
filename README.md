@@ -118,6 +118,76 @@ The data obtained are described in the following table:
 |Sensitivity|	0|
 |Specificity|	0|
 
+Table 1. Abalone19
 
+In the table it can be seen that the Accuracy value is greater than 95% for the KNN classifier, this value is not reliable since there is a big difference between the number of instances in the two classes, the sensitivity and specificity values are 0 The main cause of this is the high rate of imbalance in this data set.
 
+The Roulette model was applied to generate synthetic data on the abalone19 data set to increase the number of positive instances, the confusion matrix was as follows:
 
+![alt text](https://github.com/jorgedejesus110890/Synthetic-data/blob/main/MCR_Abalone.jpg?raw=true)
+
+As can be seen, there are 7541 true positives, 0 false positives, 19 false negatives and 36 true negatives.
+
+The results obtained are shown in the following table.
+
+|Abalone19(Roulette)|	KNN|
+|-|-|
+|Accuracy|	0.9975|
+|Precision|	1|
+|Recall|	0.9975|
+|F1 Score|	0.9987|
+|Sensitivity|	0.9975|
+|Specificity|	1|
+
+Table 2. Abalone19 Roulette method.
+
+As shown in the Table doing a 10% data increase with the spinner method caused the Sensitivity, Specificity and F1_score values to improve for the KNN classifier, the Sensitivity value reached more than 99%, recall more than 99% and F1_score more than 99 in the KNN classifier. This reflects the effect of the instances added to the data set.
+It can be seen in the following graphs the comparison of the distributions before and after applying the Roulette method, in blue they are shown before applying the Roulette method and in orange with the Roulette method.
+
+![alt text](https://github.com/jorgedejesus110890/Synthetic-data/blob/main/Dist_Abalone.jpg?raw=true)
+
+When applying the roulette method, the data preserved the distribution.
+
+The SMOTE model was applied to generate synthetic data on the abalone19 dataset to increase the number of positive instances, the confusion matrix was as follows:
+
+![alt text](https://github.com/jorgedejesus110890/Synthetic-data/blob/main/MCS_Abalone.jpg?raw=true)
+
+As can be seen, there are 818 true positives, 11 false positives, 35 false negatives and 16 true negatives.
+The results obtained are shown in the following table.
+
+|Abalone19(SMOTE)|	KNN|
+|-|-|
+|Accuracy|	0.9477|
+|Precision|	0.9867|
+|Recall|	0.9590|
+|F1 Score|	0.9727|
+|Sensitivity|	0.9590|
+|Specificity|	0.5926|
+
+Table 3. Abalone19 SMOTE method.
+
+As shown in the table, increasing the data with the Smote method caused the values to improve for the KNN classifier.
+It can be seen in the following graphs the comparison of the distributions before and after applying the Smote method, in blue they are shown before applying the Roulette method and in orange with the Roulette method.
+
+![alt text](https://github.com/jorgedejesus110890/Synthetic-data/blob/main/Dist_S_Abalone.jpg?raw=true)
+
+When applying the Smote method, the data preserved the distribution.
+We can see in tables 1, 2 and 3 that Roulette throws more positive instances than Smote.
+
+# 5. Conclusions
+
+In this paper the nature of unbalanced data is explored, since unbalanced data restricts the performance and accuracy of the classifier, two methods have been proposed, the roulette method and SMOTE to overcome the negative effects of data imbalance, it is presented a comparative study between the SMOTE and Roulette methods with the aim of addressing the classification of data using the KNN method. The Roulette method gave us a higher evaluation metric in the case of the proportion between the minority and the majority class, the values of precision, sensitivity and F1_score improved in the classifier, the values in the Abalone19 dataset improved with proportions greater than 98% in the KNN classifier due to the high unbalanced proportion in this data set.
+
+# 6. Bibliografía 
+
+[1] Amel Ali Alhussan, Doaa Sami Khafaga, El-Sayed M. El-Kenawy, Abdelhameed Ibrahim, Marwa Metwally Eid, Abdelaziz A. Abdelhamid, "Pothole and Plain Road Classification Using Adaptive Mutation Dipper Throated Optimization and Transfer Learning for Self Driving Cars", IEEE Access, vol.10, pp.84188-84211, 2022.
+
+[2] S. García, Z.-L. Zhang, A. Altalhi, S. Alshomrani, and F. Herrera, ‘‘Dynamic ensemble selection for multi-class imbalanced datasets,’’ Inf. Sci., vols. 445–446, pp. 22–37, Jun. 2018.
+
+[3] Aceves-Fernandez, Marco. (2021). Inteligencia Artificial para Programadores con Prisa. 
+
+[4] S. Piri, D. Delen, and T. Liu, ‘‘A synthetic informative minority oversampling (SIMO) algorithm leveraging support vector machine to enhance learning from imbalanced datasets,’’ Decis. Support Syst., vol. 106, pp. 15–29, Feb. 2018.
+
+[5] F. Hu, C. Yu, J. Dai, and K. Liu, ‘‘A mixed sampling method for imbalanced data based on neighborhood density,’’ in Proc. IEEE 4th Int. Conf. Cloud Comput. Big Data Anal. (ICCCBDA), Apr. 2019, pp. 94–98.
+
+[6] N. V. Chawla, K. W. Bowyer, L. O. Hall, and W. P. Kegelmeyer, ‘‘SMOTE: Synthetic minority over-sampling technique,’’ J. Artif. Intell. Res., vol. 16, no. 1, pp. 321–357, 2002.
